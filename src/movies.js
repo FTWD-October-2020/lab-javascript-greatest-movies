@@ -28,7 +28,7 @@ let howManyMovies = (movies) => {
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
 let ratesAverage = (movies) => {
     let sum = movies.reduce((acc, cur) => {
-        console.log(acc, cur)
+        // console.log(acc, cur)
         if (cur.rate) {
             return acc + Number(cur.rate)
         } else {
@@ -38,6 +38,14 @@ let ratesAverage = (movies) => {
     return Number((sum / movies.length).toFixed(2)) || 0
 }
 // Iteration 4: Drama movies - Get the average of Drama Movies
+let dramaMoviesRate = (theMovies) => {
+    let dramaRate = theMovies.filter(x => {
+        return x.genre.includes('Drama')
+    })
+    return ratesAverage(dramaRate)
+}
+
+
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
