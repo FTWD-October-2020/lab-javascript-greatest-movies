@@ -46,8 +46,25 @@ let dramaMoviesRate = (theMovies) => {
 }
 
 
-
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
+
+let orderByYear = (movies) => {
+    let copyOfMovies = [...movies]
+    copyOfMovies.sort((a, b) => {
+        if (a.year > b.year) {
+            return 1
+        } else if (a.year < b.year) {
+            return -1
+        } else {
+            if (a.title > b.title) {
+                return 1
+            } else {
+                return -1
+            }
+        }
+    })
+    return copyOfMovies
+}
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
