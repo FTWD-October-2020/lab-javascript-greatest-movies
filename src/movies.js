@@ -68,6 +68,23 @@ let orderByYear = (movies) => {
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
+let orderAlphabetically = (movies) => {
+    let newMovies = [...movies];
+    newMovies.sort((movieA, movieB) => {
+        if(movieA.title > movieB.title) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+    let first20 = [];
+    for(let i = 0; i < newMovies.length && i < 20; i++) {
+        first20.push(newMovies[i].title)
+    }
+    return first20;
+
+}
+
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
